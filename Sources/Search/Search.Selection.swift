@@ -1,5 +1,5 @@
 extension Search {
-    /// Projects a match boundary; searching remains independent of selection.
+
     public struct Selection {
         public let search: Search
         public let boundary: Boundary
