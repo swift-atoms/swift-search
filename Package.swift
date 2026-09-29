@@ -8,5 +8,5 @@ let package = Package(
     swiftLanguageModes: [.v6]
 )
 for target in package.targets {
-    target.swiftSettings = [.enableExperimentalFeature("Lifetimes"), .enableUpcomingFeature("ExistentialAny")]
+    target.swiftSettings = [.enableExperimentalFeature("Lifetimes"), .enableUpcomingFeature("ExistentialAny"), .enableUpcomingFeature("InferIsolatedConformances")]
 }
