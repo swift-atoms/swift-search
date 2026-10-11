@@ -4,10 +4,10 @@ let package = Package(
     name: "swift-search",
     platforms: [.macOS(.v27), .iOS(.v27), .tvOS(.v27), .watchOS(.v27), .visionOS(.v27)],
     products: [.library(name: "Search", targets: ["Search"])],
-    targets: [.target(name: "Search"), .testTarget(name: "Search Tests", dependencies: ["Search"])],
+    targets: [.target(name: "Search"), .testTarget(name: "Search Tests", dependencies: [.target(name: "Search")])],
     swiftLanguageModes: [.v6]
 )
-for target in package.targets where ![.system, .binary, .plugin].contains(target.type) {
+for target in package.targets where ![.system, .binary, .plugin, .macro].contains(target.type) {
     target.swiftSettings = (target.swiftSettings ?? []) + [
         .strictMemorySafety(),
         .enableUpcomingFeature("ExistentialAny"),

@@ -1,3 +1,3 @@
 extension Search {
-    public enum Error: Swift.Error, Equatable { case notFound }
+    public enum Error: Swift::Error, Equatable { case notFound }
 }
