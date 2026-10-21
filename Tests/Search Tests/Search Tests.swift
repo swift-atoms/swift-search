@@ -1,9 +1,14 @@
 import Search
 import Testing
+
 @Test func scalarSearchReturnsBothBoundaries() throws {
-    let result = try Search(42).first(from: 0, advance: { $0 < 3 ? $0 + 1 : nil }, matching: { pattern, position in
-        pattern == 42 && position == 2 ? 5 : nil
-    })
+    let result = try Search(42).first(
+        from: 0,
+        advance: { $0 < 3 ? $0 + 1 : nil },
+        matching: { pattern, position in
+            pattern == 42 && position == 2 ? 5 : nil
+        }
+    )
     #expect(result.start == 2)
     #expect(result.end == 5)
 }
